@@ -1,16 +1,29 @@
 import { useEffect } from 'react'
 import './App.css'
 import { Counter } from './components/Counter/Counter'
-import { PageTitleSetter } from './components/PageTitleSetter/PageTitleSetter'
+import { TitleSetter } from './components/TitleSetter/TitleSetter'
 import { Toggle } from './components/Toggle/Toggle'
+import { BrowserRouter } from 'react-router'
+import { Routes } from 'react-router'
+import { Route } from 'react-router'
+import { MainLayout } from './layouts/MainLayout'
+import { About } from './pages/About/About'
+import { Home } from './pages/Home/Home'
+import { Contact } from './pages/Contact/Contact'
 
 function App() {
 	useEffect(() => console.log("Velkommen Til Min Side"), []);
 	return (
 		<>
-			<PageTitleSetter />
-			<Counter />
-			<Toggle />
+			<BrowserRouter>
+				<Routes>
+					<Route path='/' element={<MainLayout />}>
+						<Route path='/about' element={<About />} />
+						<Route path='/home' element={<Home />} />
+						<Route path='/contact' element={<Contact />} />
+					</Route>
+				</Routes>
+			</BrowserRouter>
 		</>
 	)
 }

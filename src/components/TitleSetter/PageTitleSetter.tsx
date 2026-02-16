@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 
-export const PageTitleSetter = () => {
+export const TitleSetter = () => {
 	const [title, setTitle] = useState("");
 	const [titleLength, settitleLength] = useState(0);
+	const charecters: Array<string> = ['a', 'b'];
 	useEffect(() => {
 		document.title = title;
 		settitleLength(title.length);
