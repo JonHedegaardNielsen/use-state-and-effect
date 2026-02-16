@@ -1,8 +1,5 @@
 import { useEffect } from 'react'
 import './App.css'
-import { Counter } from './components/Counter/Counter'
-import { TitleSetter } from './components/TitleSetter/TitleSetter'
-import { Toggle } from './components/Toggle/Toggle'
 import { BrowserRouter } from 'react-router'
 import { Routes } from 'react-router'
 import { Route } from 'react-router'
@@ -10,6 +7,7 @@ import { MainLayout } from './layouts/MainLayout'
 import { About } from './pages/About/About'
 import { Home } from './pages/Home/Home'
 import { Contact } from './pages/Contact/Contact'
+import { Products } from './pages/Products/Products'
 
 function App() {
 	useEffect(() => console.log("Velkommen Til Min Side"), []);
@@ -19,6 +17,7 @@ function App() {
 				<Routes>
 					<Route path='/' element={<MainLayout />}>
 						<Route path='/about' element={<About />} />
+						<Route path='/products' element={<Products />} />
 						<Route path='/home' element={<Home />} />
 						<Route path='/contact' element={<Contact />} />
 					</Route>
