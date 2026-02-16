@@ -1,8 +1,0 @@
-.navigation {
-	display: flex;
-	flex-direction: row;
-
-	li {
-		margin-left: 40px;
-	}
-}
